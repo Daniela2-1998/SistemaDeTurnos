@@ -1,0 +1,54 @@
+##spring.application.name=sistemaDeTurnos
+
+
+spring:
+  application:
+    name: sistemaDeTurnos
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sistematurnos
+    jdbcUrl: url
+    username: daniela
+    password: 123456
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true  # Evita warnings para PostgreSQL
+
+
+  springdoc:
+    api-docs:
+      path: /api-docs
+      enabled: true
+    swagger-ui:
+      path: /swagger-ui.html
+      enabled: true
+
+server:
+  port: 5055
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+    instance:
+      preferIpAddress: true
+
+  jackson:
+    serializationFeature:
+      FAIL_ON_EMPTY_BEANS: false
+
+  logging:
+    level:
+      org.hibernate.SQL: DEBUG
+      org.hibernate.type.descriptor.sql.BasicBinder: TRACE
