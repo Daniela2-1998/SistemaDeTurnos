@@ -1,9 +1,8 @@
 ##spring.application.name=sistemaDeTurnos
 
-
 spring:
   application:
-    name: sistemaDeTurnos
+    name: SistemaDeTurnos
 
   datasource:
     url: jdbc:postgresql://localhost:5432/sistematurnos
@@ -18,7 +17,7 @@ spring:
     show-sql: true
     properties:
       hibernate:
-        format_sql: true
+        format_sql: true  # Formatea el SQL para mejor legibilidad
         jdbc:
           lob:
             non_contextual_creation: true  # Evita warnings para PostgreSQL
@@ -33,7 +32,7 @@ spring:
       enabled: true
 
 server:
-  port: 5055
+  port: 5053
 
 eureka:
   client:
