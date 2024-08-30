@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 public class DoctoresResponseDto extends UsuariosResponseDto {
 
-    private List<String> especializaciones;
+    private String especializacion;
 
     private Double sueldo;
 

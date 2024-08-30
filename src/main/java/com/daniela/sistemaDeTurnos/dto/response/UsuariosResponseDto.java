@@ -19,8 +19,6 @@ public class UsuariosResponseDto {
 
     private String nombre;
 
-    private String apellido;
-
     private String tipo;
 
     private String identificacion;

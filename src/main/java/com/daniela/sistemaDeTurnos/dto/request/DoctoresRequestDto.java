@@ -15,7 +15,7 @@ import java.util.List;
 public class DoctoresRequestDto extends UsuariosRequestDto{
 
     @NotNull(message = "El doctor debe tener al menos una especialización")
-    private List<String> especializaciones;
+    private String especializacion;
 
     @Min(value = 1, message = "El sueldo debe ser superior a 1")
     @NotNull(message = "El cargo no puede ser nulo")

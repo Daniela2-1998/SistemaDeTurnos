@@ -17,7 +17,7 @@ import java.util.List;
 @Table(name = "doctores")
 public class Doctores extends Usuarios{
 
-    private List<String> especializaciones;
+    private String especializacion;
 
     private Double sueldo;
 
@@ -26,12 +26,12 @@ public class Doctores extends Usuarios{
 
 
     // Getters y setters
-    public List<String> getEspecializaciones() {
-        return especializaciones;
+    public String getEspecializacion() {
+        return especializacion;
     }
 
-    public void setEspecializaciones(List<String> especializaciones) {
-        this.especializaciones = especializaciones;
+    public void setEspecializacion(String especializacion) {
+        this.especializacion = especializacion;
     }
 
     public Double getSueldo() {

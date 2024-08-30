@@ -27,13 +27,9 @@ public class UsuariosConIdRequestDto {
                     "una minúscula, un número y un carácter especial")
     private String contraseña;
 
-    @Size(min = 2, max = 20)
+    @Size(min = 2, max = 30)
     @NotNull(message = "El nombre de la persona no puede ser nulo")
     private String nombre;
-
-    @Size(min = 2, max = 20)
-    @NotNull(message = "El apellido de la persona no puede ser nulo")
-    private String apellido;
 
     @NotNull(message = "El tipo de usuario no puede ser nulo")
     private String tipo;
