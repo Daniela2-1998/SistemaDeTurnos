@@ -10,13 +10,13 @@ import java.util.List;
 @Repository
 public interface IAdministrativosRepository extends JpaRepository<Administrativos, Long> {
 
-    List<Administrativos> findByMail(String mail);
+    Administrativos findByMail(String mail);
 
     List<Administrativos> findByNombre(String nombre);
 
     List<Administrativos> findByTipo(String tipo);
 
-    List<Administrativos> findByIdentificacion(String identificacion);
+    Administrativos findByIdentificacion(String identificacion);
 
     List<Administrativos> findByEstado(Usuarios.Estado estado);
 

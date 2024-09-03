@@ -10,13 +10,13 @@ import java.util.List;
 @Repository
 public interface IDoctoresRepository extends JpaRepository<Doctores, Long>{
 
-    List<Doctores> findByMail(String mail);
+    Doctores findByMail(String mail);
 
     List<Doctores> findByNombre(String nombre);
 
     List<Doctores> findByTipo(String tipo);
 
-    List<Doctores> findByIdentificacion(String identificacion);
+    Doctores findByIdentificacion(String identificacion);
 
     List<Doctores> findByEstado(Usuarios.Estado estado);
 
@@ -26,6 +26,6 @@ public interface IDoctoresRepository extends JpaRepository<Doctores, Long>{
 
     List<Doctores> findBySueldo(Double sueldo);
 
-    List<Doctores> findByCelular(String celular);
+    Doctores findByCelular(String celular);
 
 }

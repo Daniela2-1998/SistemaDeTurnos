@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface IEspecializacionesRepository extends JpaRepository<Especializaciones, Long> {
 
-    List<Especializaciones> findByNombre(String nombre);
+    Especializaciones findByNombre(String nombre);
 
 }

@@ -10,18 +10,18 @@ import java.util.List;
 @Repository
 public interface IPacientesRepository extends JpaRepository<Pacientes, Long> {
 
-    List<Pacientes> findByMail(String mail);
+    Pacientes findByMail(String mail);
 
     List<Pacientes> findByNombre(String nombre);
 
     List<Pacientes> findByTipo(String tipo);
 
-    List<Pacientes> findByIdentificacion(String identificacion);
+    Pacientes findByIdentificacion(String identificacion);
 
     List<Pacientes> findByEstado(Usuarios.Estado estado);
 
 
     // Específicos
-    List<Pacientes> findByCelular(String celular);
+    Pacientes findByCelular(String celular);
 
 }

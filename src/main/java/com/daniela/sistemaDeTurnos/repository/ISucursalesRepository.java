@@ -9,8 +9,8 @@ import java.util.List;
 @Repository
 public interface ISucursalesRepository extends JpaRepository<Sucursales, Long> {
 
-    List<Sucursales> findByBarrio(String barrio);
+    Sucursales findByBarrio(String barrio);
 
-    List<Sucursales> findByDireccion(String direccion);
+    Sucursales findByDireccion(String direccion);
 
 }
