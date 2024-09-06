@@ -93,71 +93,72 @@ public class TurnosServiceImp implements ITurnosService {
     @Override
     public List<TurnosResponseDto> getTurnosBySucursal(Sucursales sucursal) {
         List<Turnos> turnos = turnosRepository.findBySucursal(sucursal);
-        List<TurnosResponseDto> turnosLista = new ArrayList<>();
-        turnosLista.stream().forEach(turno -> turnosLista.add(mapper.map(turno, TurnosResponseDto.class)));
-        return turnosLista;
+        return turnos.stream()
+                .map(turno -> mapper.map(turno, TurnosResponseDto.class))
+                .toList();
     }
 
     @Override
     public List<TurnosResponseDto> getTurnosByDia(LocalDate dia) {
         List<Turnos> turnos = turnosRepository.findByDia(dia);
-        List<TurnosResponseDto> turnosLista = new ArrayList<>();
-        turnosLista.stream().forEach(turno -> turnosLista.add(mapper.map(turno, TurnosResponseDto.class)));
-        return turnosLista;
+        return turnos.stream()
+                .map(turno -> mapper.map(turno, TurnosResponseDto.class))
+                .toList();
     }
 
     @Override
     public List<TurnosResponseDto> getTurnosByHora(String hora) {
         List<Turnos> turnos = turnosRepository.findByHora(hora);
-        List<TurnosResponseDto> turnosLista = new ArrayList<>();
-        turnosLista.stream().forEach(turno -> turnosLista.add(mapper.map(turno, TurnosResponseDto.class)));
-        return turnosLista;
+        return turnos.stream()
+                .map(turno -> mapper.map(turno, TurnosResponseDto.class))
+                .toList();
     }
 
     @Override
     public List<TurnosResponseDto> getTurnosByDoctor(Doctores doctor) {
         List<Turnos> turnos = turnosRepository.findByDoctor(doctor);
-        List<TurnosResponseDto> turnosLista = new ArrayList<>();
-        turnosLista.stream().forEach(turno -> turnosLista.add(mapper.map(turno, TurnosResponseDto.class)));
-        return turnosLista;    }
+        return turnos.stream()
+                .map(turno -> mapper.map(turno, TurnosResponseDto.class))
+                .toList();
+    }
 
     @Override
     public List<TurnosResponseDto> getTurnosByPaciente(Pacientes paciente) {
         List<Turnos> turnos = turnosRepository.findByPaciente(paciente);
-        List<TurnosResponseDto> turnosLista = new ArrayList<>();
-        turnosLista.stream().forEach(turno -> turnosLista.add(mapper.map(turno, TurnosResponseDto.class)));
-        return turnosLista;
+        return turnos.stream()
+                .map(turno -> mapper.map(turno, TurnosResponseDto.class))
+                .toList();
     }
 
     @Override
     public List<TurnosResponseDto> getTurnosBySucursalAndDia(Sucursales sucursal, LocalDate dia) {
         List<Turnos> turnos = turnosRepository.findBySucursalAndDia(sucursal, dia);
-        List<TurnosResponseDto> turnosLista = new ArrayList<>();
-        turnosLista.stream().forEach(turno -> turnosLista.add(mapper.map(turno, TurnosResponseDto.class)));
-        return turnosLista;
+        return turnos.stream()
+                .map(turno -> mapper.map(turno, TurnosResponseDto.class))
+                .toList();
     }
 
     @Override
     public List<TurnosResponseDto> getTurnosByDiaAndHora(LocalDate dia, String hora) {
         List<Turnos> turnos = turnosRepository.findByDiaAndHora(dia, hora);
-        List<TurnosResponseDto> turnosLista = new ArrayList<>();
-        turnosLista.stream().forEach(turno -> turnosLista.add(mapper.map(turno, TurnosResponseDto.class)));
-        return turnosLista;
+        return turnos.stream()
+                .map(turno -> mapper.map(turno, TurnosResponseDto.class))
+                .toList();
     }
 
     @Override
     public List<TurnosResponseDto> getTurnosByDoctorAndPaciente(Doctores doctor, Pacientes paciente) {
         List<Turnos> turnos = turnosRepository.findByDoctorAndPaciente(doctor, paciente);
-        List<TurnosResponseDto> turnosLista = new ArrayList<>();
-        turnosLista.stream().forEach(turno -> turnosLista.add(mapper.map(turno, TurnosResponseDto.class)));
-        return turnosLista;
+        return turnos.stream()
+                .map(turno -> mapper.map(turno, TurnosResponseDto.class))
+                .toList();
     }
 
     @Override
     public List<TurnosResponseDto> getTurnosByDoctorAndPacienteAndDia(Doctores doctor, Pacientes paciente, LocalDate dia) {
         List<Turnos> turnos = (List<Turnos>) turnosRepository.findByDoctorAndPacienteAndDia(doctor, paciente, dia);
-        List<TurnosResponseDto> turnosLista = new ArrayList<>();
-        turnosLista.stream().forEach(turno -> turnosLista.add(mapper.map(turno, TurnosResponseDto.class)));
-        return turnosLista;
+        return turnos.stream()
+                .map(turno -> mapper.map(turno, TurnosResponseDto.class))
+                .toList();
     }
 }

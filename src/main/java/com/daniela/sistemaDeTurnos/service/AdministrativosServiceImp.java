@@ -98,10 +98,10 @@ public class AdministrativosServiceImp implements IAdministrativosService{
 
     @Override
     public List<AdministrativosResponseDto> getAdministrativoByNombre(String nombre) {
-        List<Administrativos> administrativo = administrativosRepository.findByNombre(nombre);
-        List<AdministrativosResponseDto> administrativosLista = new ArrayList<>();
-        administrativosLista.stream().forEach(administrativos -> administrativosLista.add(mapper.map(administrativos, AdministrativosResponseDto.class)));
-        return administrativosLista;
+        List<Administrativos> administrativos = administrativosRepository.findByNombre(nombre);
+        return administrativos.stream()
+                .map(administrativo -> mapper.map(administrativo, AdministrativosResponseDto.class))
+                .toList();
     }
 
     @Override
@@ -112,33 +112,33 @@ public class AdministrativosServiceImp implements IAdministrativosService{
 
     @Override
     public List<AdministrativosResponseDto> getAdministrativoByEstado(Usuarios.Estado estado) {
-        List<Administrativos> administrativo = administrativosRepository.findByEstado(estado);
-        List<AdministrativosResponseDto> administrativosLista = new ArrayList<>();
-        administrativosLista.stream().forEach(administrativos -> administrativosLista.add(mapper.map(administrativos, AdministrativosResponseDto.class)));
-        return administrativosLista;
+        List<Administrativos> administrativos = administrativosRepository.findByEstado(estado);
+        return administrativos.stream()
+                .map(administrativo -> mapper.map(administrativo, AdministrativosResponseDto.class))
+                .toList();
     }
 
     @Override
     public List<AdministrativosResponseDto> getAdministrativoByCargo(String cargo) {
-        List<Administrativos> administrativo = administrativosRepository.findByCargo(cargo);
-        List<AdministrativosResponseDto> administrativosLista = new ArrayList<>();
-        administrativosLista.stream().forEach(administrativos -> administrativosLista.add(mapper.map(administrativo, AdministrativosResponseDto.class)));
-        return administrativosLista;
+        List<Administrativos> administrativos = administrativosRepository.findByCargo(cargo);
+        return administrativos.stream()
+                .map(administrativo -> mapper.map(administrativo, AdministrativosResponseDto.class))
+                .toList();
     }
 
     @Override
     public List<AdministrativosResponseDto> getAdministrativoByHorario(String horario) {
-        List<Administrativos> administrativo = administrativosRepository.findByHorarios(horario);
-        List<AdministrativosResponseDto> administrativosLista = new ArrayList<>();
-        administrativosLista.stream().forEach(administrativos -> administrativosLista.add(mapper.map(administrativos, AdministrativosResponseDto.class)));
-        return administrativosLista;
+        List<Administrativos> administrativos = administrativosRepository.findByHorarios(horario);
+        return administrativos.stream()
+                .map(administrativo -> mapper.map(administrativo, AdministrativosResponseDto.class))
+                .toList();
     }
 
     @Override
     public List<AdministrativosResponseDto> getAdministrativoBySueldo(Double sueldo) {
-        List<Administrativos> administrativo = administrativosRepository.findBySueldo(sueldo);
-        List<AdministrativosResponseDto> administrativosLista = new ArrayList<>();
-        administrativosLista.stream().forEach(administrativos -> administrativosLista.add(mapper.map(administrativos, AdministrativosResponseDto.class)));
-        return administrativosLista;
+        List<Administrativos> administrativos = administrativosRepository.findBySueldo(sueldo);
+        return administrativos.stream()
+                .map(administrativo -> mapper.map(administrativo, AdministrativosResponseDto.class))
+                .toList();
     }
 }

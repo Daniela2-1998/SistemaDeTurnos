@@ -103,9 +103,9 @@ public class PacientesServiceImp implements IPacientesService{
     @Override
     public List<PacientesResponseDto> getPacienteByNombre(String nombre) {
         List<Pacientes> pacientes = pacientesRepository.findByNombre(nombre);
-        List<PacientesResponseDto> listaPacientes = new ArrayList<>();
-        listaPacientes.stream().forEach(paciente -> listaPacientes.add(mapper.map(paciente, PacientesResponseDto.class)));
-        return listaPacientes;
+        return pacientes.stream()
+                .map(paciente -> mapper.map(paciente, PacientesResponseDto.class))
+                .toList();
     }
 
     @Override
@@ -116,9 +116,9 @@ public class PacientesServiceImp implements IPacientesService{
     @Override
     public List<PacientesResponseDto> getPacienteByEstado(Usuarios.Estado estado) {
         List<Pacientes> pacientes = pacientesRepository.findByEstado(estado);
-        List<PacientesResponseDto> listaPacientes = new ArrayList<>();
-        listaPacientes.stream().forEach(paciente -> listaPacientes.add(mapper.map(paciente, PacientesResponseDto.class)));
-        return listaPacientes;
+        return pacientes.stream()
+                .map(paciente -> mapper.map(paciente, PacientesResponseDto.class))
+                .toList();
     }
 
     @Override

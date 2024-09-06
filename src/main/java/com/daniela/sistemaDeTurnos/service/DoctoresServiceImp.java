@@ -100,9 +100,9 @@ public class DoctoresServiceImp implements IDoctoresService {
         if (doctores.isEmpty()) {
             throw new EntityNotFoundException("No se encontró un doctor con nombre: " + nombre);
         }
-        List<DoctoresResponseDto> doctoresList = new ArrayList<>();
-        doctoresList.stream().forEach(doctor -> doctoresList.add(mapper.map(doctor, DoctoresResponseDto.class)));
-        return doctoresList;
+        return doctores.stream()
+                .map(doctor -> mapper.map(doctor, DoctoresResponseDto.class))
+                .toList();
     }
 
     @Override
@@ -120,9 +120,9 @@ public class DoctoresServiceImp implements IDoctoresService {
         if(doctores.isEmpty()){
             throw new EntityNotFoundException("No se encontró un doctor con estado: " + estado);
         }
-        List<DoctoresResponseDto> doctoresList = new ArrayList<>();
-        doctoresList.stream().forEach(doctor -> doctoresList.add(mapper.map(doctor, DoctoresResponseDto.class)));
-        return doctoresList;
+        return doctores.stream()
+                .map(doctor -> mapper.map(doctor, DoctoresResponseDto.class))
+                .toList();
     }
 
     @Override
@@ -131,9 +131,10 @@ public class DoctoresServiceImp implements IDoctoresService {
         if(doctores.isEmpty()){
             throw new EntityNotFoundException("No se encontró un doctor con especialización: " + especializacion);
         }
-        List<DoctoresResponseDto> doctoresList = new ArrayList<>();
-        doctoresList.stream().forEach(doctor -> doctoresList.add(mapper.map(doctor, DoctoresResponseDto.class)));
-        return doctoresList;    }
+        return doctores.stream()
+                .map(doctor -> mapper.map(doctor, DoctoresResponseDto.class))
+                .toList();
+    }
 
     @Override
     public List<DoctoresResponseDto> getDoctorBySueldo(Double sueldo) {
@@ -141,9 +142,10 @@ public class DoctoresServiceImp implements IDoctoresService {
         if(doctores.isEmpty()){
             throw new EntityNotFoundException("No se encontró un doctor con sueldo: " + sueldo);
         }
-        List<DoctoresResponseDto> doctoresList = new ArrayList<>();
-        doctoresList.stream().forEach(doctor -> doctoresList.add(mapper.map(doctor, DoctoresResponseDto.class)));
-        return doctoresList;    }
+        return doctores.stream()
+                .map(doctor -> mapper.map(doctor, DoctoresResponseDto.class))
+                .toList();
+    }
 
     @Override
     public DoctoresResponseDto getDoctorByCelular(String celular) {
