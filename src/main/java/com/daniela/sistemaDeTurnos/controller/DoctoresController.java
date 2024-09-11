@@ -112,7 +112,7 @@ public class DoctoresController {
         return new ResponseEntity<>(doctoresService.getDoctorBySueldo(sueldo), HttpStatus.OK);
     }
 
-    @GetMapping("/celular/ce{celular}")
+    @GetMapping("/celular/{celular}")
     public ResponseEntity<DoctoresResponseDto> getDoctorByCelular(@PathVariable String celular){
         return new ResponseEntity<>(doctoresService.getDoctorByCelular(celular), HttpStatus.OK);
     }

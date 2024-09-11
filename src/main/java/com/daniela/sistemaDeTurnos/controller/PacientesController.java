@@ -70,7 +70,7 @@ public class PacientesController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<ControllerResponse<DeleteMensajeResponseDto>> deleteDoctor(@PathVariable Long id) {
+    public ResponseEntity<ControllerResponse<DeleteMensajeResponseDto>> deletePaciente(@PathVariable Long id) {
         try {
             pacientesService.deletePaciente(id);
             ControllerResponse<DeleteMensajeResponseDto> response = new ControllerResponse<>(true, "Paciente eliminado", null);

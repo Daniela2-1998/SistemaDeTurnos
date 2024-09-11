@@ -82,7 +82,7 @@ public class EspecializacionController {
 
 
     // Extras
-    @GetMapping("/especializacion/{nombre}")
+    @GetMapping("/nombre/{nombre}")
     public ResponseEntity<EspecializacionesResponseDto> getEspecializacionByNombre(@PathVariable String nombre) {
         return new ResponseEntity<>(especializacionesService.getEspecializacionByNombre(nombre), HttpStatus.OK);
     }
